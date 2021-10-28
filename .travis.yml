@@ -1,15 +1,19 @@
 language: node_js
 node_js:
   - "stable"
+
 branches:
   only:
-  - master
+  - main
+
 cache:
   directories:
   - node_modules
+
 install:
   - npm install
   - npm install -g yarn
+
 script:
   #- yarn lint
   - yarn build
@@ -20,4 +24,4 @@ deploy:
   github_token: $github_token
   local_dir: build
   on:
-    branch: master
+    branch: main
